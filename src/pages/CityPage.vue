@@ -17,10 +17,9 @@ onMounted(async () => {
 
 const getInfo = () => {
   router.replace({ name: "city", params: { cityName: cityName.value } });
-};
-
-const update = () => {
-  router.go({ path: router.currentRoute.path, force: true });
+  setTimeout(() => {
+    router.go({ path: router.currentRoute.path, force: true });
+  }, 100);
 };
 </script>
 
