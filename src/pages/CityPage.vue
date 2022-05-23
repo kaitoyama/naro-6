@@ -15,8 +15,13 @@ onMounted(async () => {
   cityInfo.value = res.data;
 });
 
-const getInfo = () =>
-  router.push({ name: "city", params: { cityName: cityName.value } });
+const getInfo = () => {
+  router.replace({ name: "city", params: { cityName: cityName.value } });
+};
+
+const update = () => {
+  router.go({ path: router.currentRoute.path, force: true });
+};
 </script>
 
 <template>
@@ -29,6 +34,9 @@ const getInfo = () =>
   </div>
   <div>
     <button @click="getInfo">Go!</button>
+  </div>
+  <div>
+    <button @click="update">!!</button>
   </div>
   <div v-if="cityInfo">{{ cityInfo }}</div>
   <div v-else>街が見つかりませんでした</div>
