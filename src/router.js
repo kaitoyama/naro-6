@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage.vue";
 import NotFound from "./pages/NotFound.vue";
 import AxiosPage from "./pages/AxiosPage.vue";
 import LoginPage from "./pages/LoginPage.vue";
+import CountryPage from "./pages/CountryPage.vue";
 import CityPage from "./pages/CityPage.vue";
 
 const routes = [
@@ -16,6 +17,12 @@ const routes = [
     meta: { isPublic: true },
   },
   { path: "/city/:cityName", name: "city", component: CityPage, props: true },
+  {
+    path: "/cities/:countryName",
+    name: "country",
+    component: CountryPage,
+    props: true,
+  },
   { path: "/:path(.*)", component: NotFound, meta: { isPublic: true } },
 ];
 

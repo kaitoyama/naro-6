@@ -6,6 +6,7 @@
         <router-link to="/axios">Axios</router-link>
         <router-link to="/city/tokyo">city</router-link>
         <router-link to="/login">Login</router-link>
+        <router-link to="/country/japan">country</router-link>
       </header>
 
       <router-view />
