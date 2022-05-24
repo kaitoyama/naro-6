@@ -6,6 +6,8 @@ import AxiosPage from "./pages/AxiosPage.vue";
 import LoginPage from "./pages/LoginPage.vue";
 import CountryPage from "./pages/CountryPage.vue";
 import CityPage from "./pages/CityPage.vue";
+import CountryCityPage from "./pages/CountryCityPage.vue";
+import CountryCityInfoPage from "./pages/CountryCityInfoPage.vue";
 
 const routes = [
   { path: "/", name: "home", component: HomePage, meta: { isPublic: true } },
@@ -18,10 +20,27 @@ const routes = [
   },
   { path: "/city/:cityName", name: "city", component: CityPage, props: true },
   {
-    path: "/cities/:countryName",
+    path: "/country/:countryCode",
+    name: "countrycity",
+    component: CountryCityPage,
+    props: true,
+  },
+  {
+    path: "/country/:countryCode/:cityName",
+    name: "countrycityinfo",
+    component: CountryCityInfoPage,
+    props: true,
+  },
+  {
+    path: "/country/:countryCode",
+    name: "countrycity",
+    component: CountryCityPage,
+    props: true,
+  },
+  {
+    path: "/country",
     name: "country",
     component: CountryPage,
-    props: true,
   },
   { path: "/:path(.*)", component: NotFound, meta: { isPublic: true } },
 ];
